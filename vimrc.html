@@ -1,18 +1,19 @@
 <!DOCTYPE html>
+<!--
+	Site that I will use to learn how to actually make HTML pages. Right
+	now it's pretty basic.
+-->
 <html>
 
 <head>
 	<title></title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="./stylesheets/main.css" type="text/css">
-	<link rel="stylesheet" href="./stylesheets/vim.css" type="text/css">
-
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="Generator" content="Vim/7.4">
 	<meta name="plugin-version" content="vim7.4_v1">
 	<meta name="syntax" content="vim">
 	<meta name="settings" content="number_lines,use_css,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
-	<meta name="colorscheme" content="xoria256">
+	<meta name="colorscheme" content="bandit">
 	<script type='text/javascript'>
 	<!--
 
@@ -41,148 +42,286 @@
 
 	-->
 	</script>
+	<link rel="stylesheet" href="./stylesheets/main.css" type="text/css">
+	<link rel="stylesheet" href="./stylesheets/vimrc.css" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-	<div class="container borderattr">
 		<header>
-			<nav class="navbar borderattr">
+			<nav class="container borderattr navbar">
 				<div><a href="index.html">Home</a></div>
-				<div><a href="vimrc.html">Vimrc</a></div>
+				<div><a href="index.html">To do</a></div>
 				<div><a href="index.html">Resume</a></div>
 				<div><a href="index.html">Contact</a></div>
-				<div><a href="index.html">Github</a></div>
-			</nav><!--
-		--></header><!--
---><span class="vim" onload='JumpToLine();'>
+				<div><a href="misc.html">misc</a></div>
+				<div><a href="index.html">G</a></div>
+			</nav>
+		</header>
+	<div class="container borderattr vim">
+
+		<section>
+<div class="vim" onload='JumpToLine();'>
 <pre id='vimCodeElement'>
-<span id="L1" class="LineNr">  1 </span><span class="Statement">set</span> <span class="PreProc">nocompatible</span>               <span class="Comment">&quot; be iMproved</span>
-<span id="L2" class="LineNr">  2 </span>
-<span id="L3" class="LineNr">  3 </span><span class="Statement">set</span> <span class="PreProc">t_Co</span>=256
-<span id="L4" class="LineNr">  4 </span><span class="Statement">syntax</span> <span class="Type">on</span>
-<span id="L5" class="LineNr">  5 </span><span class="Statement">filetype</span> <span class="Type">off</span>
+<span id="L1" class="LineNr">  1 </span><span class="Comment">&quot;</span> <span class="PreProc">TODO:</span><span class="Comment"> Make .vimrc read in my .vimrclite then stack on top of it.</span>
+<span id="L2" class="LineNr">  2 </span><span class="PreProc">set</span> <span class="PreProc">nocompatible</span>               <span class="Comment">&quot; be iMproved</span>
+<span id="L3" class="LineNr">  3 </span><span class="PreProc">set</span> <span class="PreProc">t_Co</span>=256
+<span id="L4" class="LineNr">  4 </span><span class="PreProc">syntax</span> <span class="Type">on</span>
+<span id="L5" class="LineNr">  5 </span><span class="PreProc">filetype</span> <span class="Type">off</span>                   <span class="Comment">&quot; required!</span>
 <span id="L6" class="LineNr">  6 </span>
-<span id="L7" class="LineNr">  7 </span><span class="Statement">filetype</span> <span class="Type">plugin</span> <span class="Type">indent</span> <span class="Type">on</span>
-<span id="L8" class="LineNr">  8 </span><span class="Statement">set</span> <span class="PreProc">tabstop</span>=4
-<span id="L9" class="LineNr">  9 </span><span class="Statement">set</span> <span class="PreProc">shiftwidth</span>=4
-<span id="L10" class="LineNr"> 10 </span><span class="Statement">set</span> <span class="PreProc">backspace</span>=indent<span class="Statement">,</span>eol<span class="Statement">,</span>start
-<span id="L11" class="LineNr"> 11 </span><span class="Statement">set</span> <span class="PreProc">statusline</span>=%&lt;%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B<span class="Statement">,</span>%n%Y%)\%P
-<span id="L12" class="LineNr"> 12 </span><span class="Statement">set</span> <span class="PreProc">ruler</span>
-<span id="L13" class="LineNr"> 13 </span><span class="Statement">colorscheme</span> xoria256
-<span id="L14" class="LineNr"> 14 </span><span class="Comment">&quot;colorscheme molokai</span>
+<span id="L7" class="LineNr">  7 </span><span class="PreProc">set</span> <span class="PreProc">rtp</span>+=~/.vim/bundle/Vundle.vim
+<span id="L8" class="LineNr">  8 </span><span class="PreProc">call</span> vundle#<span class="Normal">begin</span><span class="level16c">()</span>
+<span id="L9" class="LineNr">  9 </span>
+<span id="L10" class="LineNr"> 10 </span><span class="Comment">&quot; let Vundle manage Vundle</span>
+<span id="L11" class="LineNr"> 11 </span>Plugin <span class="String">'gmarik/Vundle.vim'</span>
+<span id="L12" class="LineNr"> 12 </span>
+<span id="L13" class="LineNr"> 13 </span><span class="Comment">&quot; Fuzzy completion + some language specific completion.</span>
+<span id="L14" class="LineNr"> 14 </span>Plugin <span class="String">'<a href="https://github.com/Valloric/YouCompleteMe">https://github.com/Valloric/YouCompleteMe</a>'</span>
 <span id="L15" class="LineNr"> 15 </span>
-<span id="L16" class="LineNr"> 16 </span><span class="Comment">&quot; Vim - remap help to open in a vertical buffer as opposed to a horizontal</span>
-<span id="L17" class="LineNr"> 17 </span><span class="Comment">&quot; buffer. Wasted space and hard to use the default way.</span>
-<span id="L18" class="LineNr"> 18 </span><span class="Comment">&quot;cnoremap help vert help</span>
-<span id="L19" class="LineNr"> 19 </span><span class="Comment">&quot; Vim - I like opening help in new tabs now.</span>
-<span id="L20" class="LineNr"> 20 </span><span class="Statement">cnoremap</span> help tab help
-<span id="L21" class="LineNr"> 21 </span><span class="Comment">&quot; Vim - move between buffers with hotkeys. Ctrl+(left/right).</span>
-<span id="L22" class="LineNr"> 22 </span><span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">C-Right</span><span class="Special">&gt;</span> :bnext<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
-<span id="L23" class="LineNr"> 23 </span><span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">C-Left</span><span class="Special">&gt;</span> :bprev<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
-<span id="L24" class="LineNr"> 24 </span><span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">C-h</span><span class="Special">&gt;</span> :bprev<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
-<span id="L25" class="LineNr"> 25 </span><span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">C-l</span><span class="Special">&gt;</span> :bnext<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
+<span id="L16" class="LineNr"> 16 </span><span class="Comment">&quot; Syntax checking</span>
+<span id="L17" class="LineNr"> 17 </span><span class="Comment">&quot;Plugin '<a href="https://github.com/scrooloose/syntastic.git">https://github.com/scrooloose/syntastic.git</a>'</span>
+<span id="L18" class="LineNr"> 18 </span>
+<span id="L19" class="LineNr"> 19 </span><span class="Comment">&quot; History of yanks</span>
+<span id="L20" class="LineNr"> 20 </span>Plugin <span class="String">'<a href="https://github.com/vim-scripts/YankRing.vim">https://github.com/vim-scripts/YankRing.vim</a>'</span>
+<span id="L21" class="LineNr"> 21 </span>
+<span id="L22" class="LineNr"> 22 </span><span class="Comment">&quot; Dem snippets.</span>
+<span id="L23" class="LineNr"> 23 </span>Plugin <span class="String">'<a href="https://github.com/sirver/UltiSnips">https://github.com/sirver/UltiSnips</a>'</span>
+<span id="L24" class="LineNr"> 24 </span><span class="Comment">&quot; Actual snippets for ultisnips to use</span>
+<span id="L25" class="LineNr"> 25 </span>Plugin <span class="String">'<a href="https://github.com/honza/vim-snippets">https://github.com/honza/vim-snippets</a>'</span>
 <span id="L26" class="LineNr"> 26 </span>
-<span id="L27" class="LineNr"> 27 </span><span class="Comment">&quot; When a line is wrapped, treat it as multiple lines when moving with up and</span>
-<span id="L28" class="LineNr"> 28 </span><span class="Comment">&quot; down.</span>
-<span id="L29" class="LineNr"> 29 </span><span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span> <span class="Special">&lt;</span><span class="Special">UP</span><span class="Special">&gt;</span> g<span class="Special">&lt;</span><span class="Special">UP</span><span class="Special">&gt;</span>
-<span id="L30" class="LineNr"> 30 </span><span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span> <span class="Special">&lt;</span><span class="Special">DOWN</span><span class="Special">&gt;</span> g<span class="Special">&lt;</span><span class="Special">DOWN</span><span class="Special">&gt;</span>
-<span id="L31" class="LineNr"> 31 </span><span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span> j gj
-<span id="L32" class="LineNr"> 32 </span><span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span> k gk
+<span id="L27" class="LineNr"> 27 </span><span class="Comment">&quot; bufferline shows information about all the buffers in the command bar area</span>
+<span id="L28" class="LineNr"> 28 </span>Plugin <span class="String">'<a href="https://github.com/bling/vim-bufferline">https://github.com/bling/vim-bufferline</a>'</span>
+<span id="L29" class="LineNr"> 29 </span><span class="Comment">&quot; Nice looking line at bottom</span>
+<span id="L30" class="LineNr"> 30 </span>Plugin <span class="String">'<a href="https://github.com/itchyny/lightline.vim">https://github.com/itchyny/lightline.vim</a>'</span>
+<span id="L31" class="LineNr"> 31 </span><span class="Comment">&quot; git wrapper, also a dependency for status lines to get branch names</span>
+<span id="L32" class="LineNr"> 32 </span>Plugin <span class="String">'<a href="https://github.com/tpope/vim-fugitive">https://github.com/tpope/vim-fugitive</a>'</span>
 <span id="L33" class="LineNr"> 33 </span>
-<span id="L34" class="LineNr"> 34 </span><span class="Comment">&quot; Unbind arrow keys in normal mode.</span>
-<span id="L35" class="LineNr"> 35 </span><span class="Statement">noremap</span> <span class="Special">&lt;</span><span class="Special">Up</span><span class="Special">&gt;</span> <span class="Special">&lt;</span><span class="Special">NOP</span><span class="Special">&gt;</span>
-<span id="L36" class="LineNr"> 36 </span><span class="Statement">noremap</span> <span class="Special">&lt;</span><span class="Special">Down</span><span class="Special">&gt;</span> <span class="Special">&lt;</span><span class="Special">NOP</span><span class="Special">&gt;</span>
-<span id="L37" class="LineNr"> 37 </span><span class="Statement">noremap</span> <span class="Special">&lt;</span><span class="Special">Left</span><span class="Special">&gt;</span> <span class="Special">&lt;</span><span class="Special">NOP</span><span class="Special">&gt;</span>
-<span id="L38" class="LineNr"> 38 </span><span class="Statement">noremap</span> <span class="Special">&lt;</span><span class="Special">Right</span><span class="Special">&gt;</span> <span class="Special">&lt;</span><span class="Special">NOP</span><span class="Special">&gt;</span>
-<span id="L39" class="LineNr"> 39 </span>
-<span id="L40" class="LineNr"> 40 </span><span class="Comment">&quot; Visual bell is annoying, and I imagine sounds would be too if I had them on.</span>
-<span id="L41" class="LineNr"> 41 </span><span class="Statement">set</span> <span class="PreProc">noerrorbells</span>
-<span id="L42" class="LineNr"> 42 </span><span class="Statement">set</span> <span class="PreProc">novisualbell</span>
-<span id="L43" class="LineNr"> 43 </span>
-<span id="L44" class="LineNr"> 44 </span><span class="Comment">&quot; The wildmenu is cool. See help page.</span>
-<span id="L45" class="LineNr"> 45 </span><span class="Statement">set</span> <span class="PreProc">wildmenu</span>
-<span id="L46" class="LineNr"> 46 </span><span class="Comment">&quot; Ignore compiled files when using the wildmenu. (Will probably add more)</span>
-<span id="L47" class="LineNr"> 47 </span><span class="Statement">set</span> <span class="PreProc">wildignore</span>=*.o<span class="Statement">,</span>*.so<span class="Statement">,</span>*.pyc
-<span id="L48" class="LineNr"> 48 </span><span class="Comment">&quot; This does tab completion like the normal shell does, keep going until a</span>
-<span id="L49" class="LineNr"> 49 </span><span class="Comment">&quot; conflict. I shall use the default, which is like Windows Command Prompt.</span>
-<span id="L50" class="LineNr"> 50 </span><span class="Comment">&quot;set wildmode=longest:full</span>
-<span id="L51" class="LineNr"> 51 </span>
-<span id="L52" class="LineNr"> 52 </span><span class="Comment">&quot; Use VERY MAGIC with vim search and replaces. See 'magic' in help.</span>
-<span id="L53" class="LineNr"> 53 </span><span class="Comment">&quot; Normally I need to escape regex stuff like captures (), and pipes.</span>
-<span id="L54" class="LineNr"> 54 </span><span class="Comment">&quot; All ASCII characters except '0'-'9', 'a'-'z', 'A'-'Z' and '_' have</span>
-<span id="L55" class="LineNr"> 55 </span><span class="Comment">&quot; a special meaning in very magic mode.</span>
-<span id="L56" class="LineNr"> 56 </span>:<span class="Statement">cnoremap</span> s/ s/\v
-<span id="L57" class="LineNr"> 57 </span>
-<span id="L58" class="LineNr"> 58 </span><span class="Comment">&quot; Return to previous file location after closing vim.</span>
-<span id="L59" class="LineNr"> 59 </span><span class="Statement">autocmd</span> <span class="Type">BufReadPost</span> *
-<span id="L60" class="LineNr"> 60 </span><span class="Special">     \</span> <span class="Statement">if</span> <span class="Identifier">line</span><span class="Special">(</span><span class="Constant">&quot;'\&quot;&quot;</span><span class="Special">)</span> <span class="Statement">&gt;</span> <span class="Number">0</span> <span class="Statement">&amp;&amp;</span> <span class="Identifier">line</span><span class="Special">(</span><span class="Constant">&quot;'\&quot;&quot;</span><span class="Special">)</span> <span class="Statement">&lt;=</span> <span class="Identifier">line</span><span class="Special">(</span><span class="Constant">&quot;$&quot;</span><span class="Special">)</span> |
-<span id="L61" class="LineNr"> 61 </span><span class="Special">     \</span>   <span class="Statement">exe</span> <span class="Constant">&quot;normal! g`\&quot;&quot;</span> <span class="Statement">|</span>
-<span id="L62" class="LineNr"> 62 </span><span class="Special">     \</span> <span class="Statement">endif</span>
-<span id="L63" class="LineNr"> 63 </span>
-<span id="L64" class="LineNr"> 64 </span><span class="Comment">&quot; Apparently vim has spellcheck.</span>
-<span id="L65" class="LineNr"> 65 </span><span class="Statement">map</span> ss :setlocal spell!<span class="Special">&lt;</span><span class="Special">cr</span><span class="Special">&gt;</span>
-<span id="L66" class="LineNr"> 66 </span>
-<span id="L67" class="LineNr"> 67 </span><span class="Comment">&quot; Show tabs and trailing characters.</span>
-<span id="L68" class="LineNr"> 68 </span><span class="Statement">set</span> <span class="PreProc">list</span>
-<span id="L69" class="LineNr"> 69 </span><span class="Statement">set</span> <span class="PreProc">listchars</span>=tab<span class="Statement">:</span>&gt;-<span class="Statement">,</span>trail<span class="Statement">:</span>-
-<span id="L70" class="LineNr"> 70 </span>
-<span id="L71" class="LineNr"> 71 </span><span class="Comment">&quot; This makes it keep X lines at the top and bottom before scrolling. This</span>
-<span id="L72" class="LineNr"> 72 </span><span class="Comment">&quot; helps keep some context. Note that this does cause H and L (they go to the</span>
-<span id="L73" class="LineNr"> 73 </span><span class="Comment">&quot; top and bottom of the current page respectively) to go nearest to top and bottom</span>
-<span id="L74" class="LineNr"> 74 </span><span class="Comment">&quot; before the page would start scrolling. That is H and L now go X lines from</span>
-<span id="L75" class="LineNr"> 75 </span><span class="Comment">&quot; the top and bottom.</span>
-<span id="L76" class="LineNr"> 76 </span><span class="Statement">set</span> <span class="PreProc">scrolloff</span>=10
+<span id="L34" class="LineNr"> 34 </span><span class="Comment">&quot; Color each nested paren, bracket, etc, a different color</span>
+<span id="L35" class="LineNr"> 35 </span>Plugin <span class="String">'<a href="https://github.com/kien/rainbow_parentheses.vim">https://github.com/kien/rainbow_parentheses.vim</a>'</span>
+<span id="L36" class="LineNr"> 36 </span><span class="Comment">&quot; Toggle rainbow parens at start</span>
+<span id="L37" class="LineNr"> 37 </span><span class="PreProc">au</span> <span class="Type">VimEnter</span> * RainbowParenthesesToggle
+<span id="L38" class="LineNr"> 38 </span><span class="PreProc">au</span> <span class="Type">Syntax</span> * RainbowParenthesesLoadRound
+<span id="L39" class="LineNr"> 39 </span><span class="PreProc">au</span> <span class="Type">Syntax</span> * RainbowParenthesesLoadSquare
+<span id="L40" class="LineNr"> 40 </span><span class="PreProc">au</span> <span class="Type">Syntax</span> * RainbowParenthesesLoadBraces
+<span id="L41" class="LineNr"> 41 </span>
+<span id="L42" class="LineNr"> 42 </span><span class="Comment">&quot; Note that I removed the 'black' element because it conflicted with the</span>
+<span id="L43" class="LineNr"> 43 </span><span class="Comment">&quot; bandit colorscheme's background and was not visible</span>
+<span id="L44" class="LineNr"> 44 </span><span class="PreProc">let</span> <span class="Identifier">g:rbpt_colorpairs</span> <span class="Operator">=</span> <span class="level16c">[</span>
+<span id="L45" class="LineNr"> 45 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'brown'</span>,       <span class="String">'RoyalBlue3'</span><span class="level15c">]</span>,
+<span id="L46" class="LineNr"> 46 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'Darkblue'</span>,    <span class="String">'SeaGreen3'</span><span class="level15c">]</span>,
+<span id="L47" class="LineNr"> 47 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'darkgray'</span>,    <span class="String">'DarkOrchid3'</span><span class="level15c">]</span>,
+<span id="L48" class="LineNr"> 48 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'darkgreen'</span>,   <span class="String">'firebrick3'</span><span class="level15c">]</span>,
+<span id="L49" class="LineNr"> 49 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'darkcyan'</span>,    <span class="String">'RoyalBlue3'</span><span class="level15c">]</span>,
+<span id="L50" class="LineNr"> 50 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'darkred'</span>,     <span class="String">'SeaGreen3'</span><span class="level15c">]</span>,
+<span id="L51" class="LineNr"> 51 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'darkmagenta'</span>, <span class="String">'DarkOrchid3'</span><span class="level15c">]</span>,
+<span id="L52" class="LineNr"> 52 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'brown'</span>,       <span class="String">'firebrick3'</span><span class="level15c">]</span>,
+<span id="L53" class="LineNr"> 53 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'gray'</span>,        <span class="String">'RoyalBlue3'</span><span class="level15c">]</span>,
+<span id="L54" class="LineNr"> 54 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'darkmagenta'</span>, <span class="String">'DarkOrchid3'</span><span class="level15c">]</span>,
+<span id="L55" class="LineNr"> 55 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'Darkblue'</span>,    <span class="String">'firebrick3'</span><span class="level15c">]</span>,
+<span id="L56" class="LineNr"> 56 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'darkgreen'</span>,   <span class="String">'RoyalBlue3'</span><span class="level15c">]</span>,
+<span id="L57" class="LineNr"> 57 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'darkcyan'</span>,    <span class="String">'SeaGreen3'</span><span class="level15c">]</span>,
+<span id="L58" class="LineNr"> 58 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'darkred'</span>,     <span class="String">'DarkOrchid3'</span><span class="level15c">]</span>,
+<span id="L59" class="LineNr"> 59 </span><span class="Special">    \</span> <span class="level15c">[</span><span class="String">'red'</span>,         <span class="String">'firebrick3'</span><span class="level15c">]</span>,
+<span id="L60" class="LineNr"> 60 </span><span class="Special">    \</span> <span class="level16c">]</span>
+<span id="L61" class="LineNr"> 61 </span>
+<span id="L62" class="LineNr"> 62 </span><span class="PreProc">if</span> <span class="Function">has</span><span class="level16c">(</span><span class="String">&quot;gui_running&quot;</span><span class="level16c">)</span>
+<span id="L63" class="LineNr"> 63 </span><span class="Comment">    &quot; This one only works in gvim, maybe terminal support someday.</span>
+<span id="L64" class="LineNr"> 64 </span>    Plugin <span class="String">'jaxbot/semantic-highlight.vim'</span>
+<span id="L65" class="LineNr"> 65 </span><span class="PreProc">else</span>
+<span id="L66" class="LineNr"> 66 </span><span class="Comment">    &quot; From <a href="https://bitbucket.org/abudden/taghighlight/">https://bitbucket.org/abudden/taghighlight/</a></span>
+<span id="L67" class="LineNr"> 67 </span>    Plugin <span class="String">'file:///home/hpatel/.vim/bundle/taghighlight'</span>
+<span id="L68" class="LineNr"> 68 </span><span class="Comment">    &quot; Plugin by guy who made taghighlight. Most color schemes dont support all the</span>
+<span id="L69" class="LineNr"> 69 </span><span class="Comment">    &quot; possible highlightable elements, so use this or something.</span>
+<span id="L70" class="LineNr"> 70 </span>    Plugin <span class="String">'file:///home/hpatel/.vim/bundle/easycolour'</span>
+<span id="L71" class="LineNr"> 71 </span><span class="Comment">    &quot; Taghighlight guy's custom colorscheme which has all the possible</span>
+<span id="L72" class="LineNr"> 72 </span><span class="Comment">    &quot; highlightable choices.</span>
+<span id="L73" class="LineNr"> 73 </span>    <span class="PreProc">set</span> <span class="PreProc">background</span>=dark
+<span id="L74" class="LineNr"> 74 </span><span class="PreProc">endif</span>
+<span id="L75" class="LineNr"> 75 </span><span class="Comment">&quot; This one needs a tag file.</span>
+<span id="L76" class="LineNr"> 76 </span><span class="Comment">&quot;Plugin 'ferranpm/vim-colorcode'</span>
 <span id="L77" class="LineNr"> 77 </span>
-<span id="L78" class="LineNr"> 78 </span><span class="Comment">&quot; This shows the current command you are entering near the bottom right.</span>
-<span id="L79" class="LineNr"> 79 </span><span class="Statement">set</span> <span class="PreProc">showcmd</span>
-<span id="L80" class="LineNr"> 80 </span>
-<span id="L81" class="LineNr"> 81 </span><span class="Comment">&quot; Search options. ignorecase=thisisobvious, smartcase only is case sensitive</span>
-<span id="L82" class="LineNr"> 82 </span><span class="Comment">&quot; if a capital letter is present.</span>
-<span id="L83" class="LineNr"> 83 </span><span class="Statement">set</span> <span class="PreProc">ignorecase</span>
-<span id="L84" class="LineNr"> 84 </span><span class="Statement">set</span> <span class="PreProc">smartcase</span>
-<span id="L85" class="LineNr"> 85 </span>
-<span id="L86" class="LineNr"> 86 </span><span class="Comment">&quot; The combo of 'set number' and 'set relativenumber' ends up setting</span>
-<span id="L87" class="LineNr"> 87 </span><span class="Comment">&quot; relative numbers, but where it would say line 0 for relative numbers,</span>
-<span id="L88" class="LineNr"> 88 </span><span class="Comment">&quot; shows the actual line number. The F5 remapping causes it to toggle from</span>
-<span id="L89" class="LineNr"> 89 </span><span class="Comment">&quot; absolute line numbers to relative with the actual line number at the current</span>
-<span id="L90" class="LineNr"> 90 </span><span class="Comment">&quot; line.</span>
-<span id="L91" class="LineNr"> 91 </span><span class="Statement">set</span> <span class="PreProc">number</span>
-<span id="L92" class="LineNr"> 92 </span><span class="Statement">set</span> <span class="PreProc">relativenumber</span>
-<span id="L93" class="LineNr"> 93 </span><span class="Statement">nnoremap</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span> <span class="Special">&lt;</span><span class="Special">F5</span><span class="Special">&gt;</span> :set relativenumber!<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
-<span id="L94" class="LineNr"> 94 </span>
-<span id="L95" class="LineNr"> 95 </span><span class="Comment">&quot; Disable folding, I don't need it very often.</span>
-<span id="L96" class="LineNr"> 96 </span><span class="Statement">set</span> <span class="PreProc">nofoldenable</span>
-<span id="L97" class="LineNr"> 97 </span>
-<span id="L98" class="LineNr"> 98 </span><span class="Comment">&quot;&quot;&quot; Auto complete closing characters, from vim wikia.</span>
-<span id="L99" class="LineNr"> 99 </span><span class="Comment">&quot; Curly braces.</span>
-<span id="L100" class="LineNr">100 </span><span class="Statement">inoremap</span> {      {}<span class="Special">&lt;</span><span class="Special">Left</span><span class="Special">&gt;</span>
-<span id="L101" class="LineNr">101 </span><span class="Statement">inoremap</span> {<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>  {<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>}<span class="Special">&lt;</span><span class="Special">Esc</span><span class="Special">&gt;</span>O
-<span id="L102" class="LineNr">102 </span><span class="Comment">&quot; Parentheses</span>
-<span id="L103" class="LineNr">103 </span><span class="Statement">inoremap</span>        (  ()<span class="Special">&lt;</span><span class="Special">Left</span><span class="Special">&gt;</span>
-<span id="L104" class="LineNr">104 </span><span class="Statement">inoremap</span> <span class="Special">&lt;</span><span class="Special">expr</span><span class="Special">&gt;</span> )  strpart(getline('.'), col('.')-1, 1) == &quot;)&quot; ? &quot;<span class="Special">\&lt;</span><span class="Special">Right</span><span class="Special">&gt;</span>&quot; : &quot;)&quot;
-<span id="L105" class="LineNr">105 </span>
-<span id="L106" class="LineNr">106 </span><span class="Comment">&quot; In many terminal emulators the mouse works just fine, thus enable it.</span>
-<span id="L107" class="LineNr">107 </span><span class="Statement">if</span> <span class="Identifier">has</span><span class="Special">(</span><span class="Constant">'mouse'</span><span class="Special">)</span>
-<span id="L108" class="LineNr">108 </span>  <span class="Statement">set</span> <span class="PreProc">mouse</span>=a
-<span id="L109" class="LineNr">109 </span><span class="Statement">endif</span>
-<span id="L110" class="LineNr">110 </span>
-<span id="L111" class="LineNr">111 </span><span class="Comment">&quot; Need to include 'stty -ixon' in .bashrc or .zshrc for this to work.</span>
-<span id="L112" class="LineNr">112 </span><span class="Comment">&quot; Ctrl-S will save the file.</span>
-<span id="L113" class="LineNr">113 </span><span class="Statement">inoremap</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span><span class="Special">&lt;</span><span class="Special">C-S</span><span class="Special">&gt;</span> <span class="Special">&lt;</span><span class="Special">C-O</span><span class="Special">&gt;</span>:update<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
-<span id="L114" class="LineNr">114 </span><span class="Statement">nnoremap</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span><span class="Special">&lt;</span><span class="Special">C-S</span><span class="Special">&gt;</span> :update<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
-<span id="L115" class="LineNr">115 </span><span class="Statement">inoremap</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span>jk <span class="Special">&lt;</span><span class="Special">esc</span><span class="Special">&gt;</span>
-<span id="L116" class="LineNr">116 </span><span class="Statement">inoremap</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span>fd <span class="Special">&lt;</span><span class="Special">esc</span><span class="Special">&gt;</span>
-<span id="L117" class="LineNr">117 </span><span class="Statement">noremap</span> <span class="Special">&lt;</span><span class="Special">silent</span><span class="Special">&gt;</span>; :
-<span id="L118" class="LineNr">118 </span><span class="Statement">set</span> <span class="PreProc">nowrap</span>
-<span id="L119" class="LineNr">119 </span><span class="Comment">&quot; Y by default does not work from current position to the end of the</span>
-<span id="L120" class="LineNr">120 </span><span class="Comment">&quot; line like D or C does. So change that.</span>
-<span id="L121" class="LineNr">121 </span><span class="Statement">nnoremap</span> Y y$
-<span id="L122" class="LineNr">122 </span>
-<span id="L123" class="LineNr">123 </span>
+<span id="L78" class="LineNr"> 78 </span><span class="PreProc">call</span> vundle#<span class="Normal">end</span><span class="level16c">()</span>
+<span id="L79" class="LineNr"> 79 </span>
+<span id="L80" class="LineNr"> 80 </span><span class="PreProc">if</span> <span class="Function">has</span><span class="level16c">(</span><span class="String">&quot;gui_running&quot;</span><span class="level16c">)</span>
+<span id="L81" class="LineNr"> 81 </span>    <span class="PreProc">set</span> <span class="PreProc">guifont</span>=Inconsolata\ 12
+<span id="L82" class="LineNr"> 82 </span>    <span class="PreProc">colo</span> molokai
+<span id="L83" class="LineNr"> 83 </span><span class="PreProc">else</span>
+<span id="L84" class="LineNr"> 84 </span>    <span class="PreProc">colo</span> bandit
+<span id="L85" class="LineNr"> 85 </span><span class="PreProc">endif</span>
+<span id="L86" class="LineNr"> 86 </span>
+<span id="L87" class="LineNr"> 87 </span><span class="PreProc">filetype</span> <span class="Type">plugin</span> <span class="Type">indent</span> <span class="Type">on</span>     <span class="Comment">&quot; required!</span>
+<span id="L88" class="LineNr"> 88 </span><span class="PreProc">set</span> <span class="PreProc">tabstop</span>=4
+<span id="L89" class="LineNr"> 89 </span><span class="PreProc">set</span> <span class="PreProc">shiftwidth</span>=4
+<span id="L90" class="LineNr"> 90 </span><span class="PreProc">set</span> <span class="PreProc">backspace</span>=indent<span class="PreProc">,</span>eol<span class="PreProc">,</span>start
+<span id="L91" class="LineNr"> 91 </span><span class="PreProc">set</span> <span class="PreProc">statusline</span>=%&lt;%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B<span class="PreProc">,</span>%n%Y%)\%P
+<span id="L92" class="LineNr"> 92 </span>
+<span id="L93" class="LineNr"> 93 </span><span class="Comment">&quot; Vim - I like opening help in new tabs now.</span>
+<span id="L94" class="LineNr"> 94 </span><span class="PreProc">cnoremap</span> help tab help
+<span id="L95" class="LineNr"> 95 </span><span class="Comment">&quot; Vim - move between buffers with hotkeys. Ctrl+(left/right).</span>
+<span id="L96" class="LineNr"> 96 </span><span class="PreProc">map</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">C-Right</span><span class="Delimiter">&gt;</span> :bnext<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L97" class="LineNr"> 97 </span><span class="PreProc">map</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">C-Left</span><span class="Delimiter">&gt;</span> :bprev<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L98" class="LineNr"> 98 </span><span class="PreProc">map</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">C-h</span><span class="Delimiter">&gt;</span> :bprev<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L99" class="LineNr"> 99 </span><span class="PreProc">map</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">C-l</span><span class="Delimiter">&gt;</span> :bnext<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L100" class="LineNr">100 </span>
+<span id="L101" class="LineNr">101 </span><span class="Comment">&quot; When a line is wrapped, treat it as multiple lines when moving with up and</span>
+<span id="L102" class="LineNr">102 </span><span class="Comment">&quot; down.</span>
+<span id="L103" class="LineNr">103 </span><span class="PreProc">map</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">UP</span><span class="Delimiter">&gt;</span> g<span class="Delimiter">&lt;</span><span class="Special">UP</span><span class="Delimiter">&gt;</span>
+<span id="L104" class="LineNr">104 </span><span class="PreProc">map</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">DOWN</span><span class="Delimiter">&gt;</span> g<span class="Delimiter">&lt;</span><span class="Special">DOWN</span><span class="Delimiter">&gt;</span>
+<span id="L105" class="LineNr">105 </span><span class="PreProc">map</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> j gj
+<span id="L106" class="LineNr">106 </span><span class="PreProc">map</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> k gk
+<span id="L107" class="LineNr">107 </span>
+<span id="L108" class="LineNr">108 </span><span class="PreProc">noremap</span> <span class="Delimiter">&lt;</span><span class="Special">Up</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">NOP</span><span class="Delimiter">&gt;</span>
+<span id="L109" class="LineNr">109 </span><span class="PreProc">noremap</span> <span class="Delimiter">&lt;</span><span class="Special">Down</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">NOP</span><span class="Delimiter">&gt;</span>
+<span id="L110" class="LineNr">110 </span><span class="PreProc">noremap</span> <span class="Delimiter">&lt;</span><span class="Special">Left</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">NOP</span><span class="Delimiter">&gt;</span>
+<span id="L111" class="LineNr">111 </span><span class="PreProc">noremap</span> <span class="Delimiter">&lt;</span><span class="Special">Right</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">NOP</span><span class="Delimiter">&gt;</span>
+<span id="L112" class="LineNr">112 </span>
+<span id="L113" class="LineNr">113 </span><span class="Comment">&quot; Visual bell is annoying, and I imagine sounds would be too if I had them on.</span>
+<span id="L114" class="LineNr">114 </span><span class="PreProc">set</span> <span class="PreProc">noerrorbells</span>
+<span id="L115" class="LineNr">115 </span><span class="PreProc">set</span> <span class="PreProc">novisualbell</span>
+<span id="L116" class="LineNr">116 </span>
+<span id="L117" class="LineNr">117 </span><span class="Comment">&quot; The wildmenu is cool. See help page.</span>
+<span id="L118" class="LineNr">118 </span><span class="PreProc">set</span> <span class="PreProc">wildmenu</span>
+<span id="L119" class="LineNr">119 </span><span class="Comment">&quot; Ignore compiled files when using the wildmenu. (Will probably add more)</span>
+<span id="L120" class="LineNr">120 </span><span class="PreProc">set</span> <span class="PreProc">wildignore</span>=*.o<span class="PreProc">,</span>*.so<span class="PreProc">,</span>*.pyc
+<span id="L121" class="LineNr">121 </span><span class="Comment">&quot; This does tab completion like the normal shell does, keep going until a</span>
+<span id="L122" class="LineNr">122 </span><span class="Comment">&quot; conflict. I shall use the default, which is like Windows Command Prompt.</span>
+<span id="L123" class="LineNr">123 </span><span class="Comment">&quot;set wildmode=longest:full</span>
+<span id="L124" class="LineNr">124 </span>
+<span id="L125" class="LineNr">125 </span><span class="Comment">&quot; Use VERY MAGIC with vim search and replaces. See 'magic' in help.</span>
+<span id="L126" class="LineNr">126 </span><span class="Comment">&quot; Normally I need to escape regex stuff like captures (), and pipes.</span>
+<span id="L127" class="LineNr">127 </span><span class="Comment">&quot; All ASCII characters except '0'-'9', 'a'-'z', 'A'-'Z' and '_' have</span>
+<span id="L128" class="LineNr">128 </span><span class="Comment">&quot; a special meaning in very magic mode.</span>
+<span id="L129" class="LineNr">129 </span>:<span class="PreProc">cnoremap</span> s/ s/\v
+<span id="L130" class="LineNr">130 </span>
+<span id="L131" class="LineNr">131 </span><span class="Comment">&quot; Return to previous file location after closing vim.</span>
+<span id="L132" class="LineNr">132 </span><span class="PreProc">autocmd</span> <span class="Type">BufReadPost</span> *
+<span id="L133" class="LineNr">133 </span><span class="Special">     \</span> <span class="PreProc">if</span> <span class="Function">line</span><span class="level16c">(</span><span class="String">&quot;'\&quot;&quot;</span><span class="level16c">)</span> <span class="Operator">&gt;</span> <span class="Constant">0</span> <span class="Operator">&amp;&amp;</span> <span class="Function">line</span><span class="level16c">(</span><span class="String">&quot;'\&quot;&quot;</span><span class="level16c">)</span> <span class="Operator">&lt;=</span> <span class="Function">line</span><span class="level16c">(</span><span class="String">&quot;$&quot;</span><span class="level16c">)</span> |
+<span id="L134" class="LineNr">134 </span><span class="Special">     \</span>   <span class="PreProc">exe</span> <span class="String">&quot;normal! g`\&quot;&quot;</span> <span class="PreProc">|</span>
+<span id="L135" class="LineNr">135 </span><span class="Special">     \</span> <span class="PreProc">endif</span>
+<span id="L136" class="LineNr">136 </span>
+<span id="L137" class="LineNr">137 </span><span class="Comment">&quot; Spell check</span>
+<span id="L138" class="LineNr">138 </span><span class="PreProc">map</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> ss :setlocal spell!<span class="Delimiter">&lt;</span><span class="Special">cr</span><span class="Delimiter">&gt;</span>
+<span id="L139" class="LineNr">139 </span>
+<span id="L140" class="LineNr">140 </span><span class="Comment">&quot; Show tabs and trailing characters.</span>
+<span id="L141" class="LineNr">141 </span><span class="PreProc">set</span> <span class="PreProc">list</span>
+<span id="L142" class="LineNr">142 </span><span class="PreProc">set</span> <span class="PreProc">listchars</span>=tab<span class="PreProc">:</span>&gt;-<span class="PreProc">,</span>trail<span class="PreProc">:</span>-
+<span id="L143" class="LineNr">143 </span>
+<span id="L144" class="LineNr">144 </span><span class="Comment">&quot; This makes it keep X lines at the top and bottom before scrolling. This</span>
+<span id="L145" class="LineNr">145 </span><span class="Comment">&quot; helps keep some context. Note that this does cause H and L (they go to the</span>
+<span id="L146" class="LineNr">146 </span><span class="Comment">&quot; top and bottom of the current page respectively) to go nearest to top and bottom</span>
+<span id="L147" class="LineNr">147 </span><span class="Comment">&quot; before the page would start scrolling. That is H and L now go X lines from</span>
+<span id="L148" class="LineNr">148 </span><span class="Comment">&quot; the top and bottom.</span>
+<span id="L149" class="LineNr">149 </span><span class="PreProc">set</span> <span class="PreProc">scrolloff</span>=10
+<span id="L150" class="LineNr">150 </span>
+<span id="L151" class="LineNr">151 </span><span class="Comment">&quot; This shows the current command you are entering near the bottom right.</span>
+<span id="L152" class="LineNr">152 </span><span class="PreProc">set</span> <span class="PreProc">showcmd</span>
+<span id="L153" class="LineNr">153 </span>
+<span id="L154" class="LineNr">154 </span><span class="Comment">&quot; Search options. ignorecase=thisisobvious, smartcase only is case sensitive</span>
+<span id="L155" class="LineNr">155 </span><span class="Comment">&quot; if a capital letter is present.</span>
+<span id="L156" class="LineNr">156 </span><span class="PreProc">set</span> <span class="PreProc">ignorecase</span>
+<span id="L157" class="LineNr">157 </span><span class="PreProc">set</span> <span class="PreProc">smartcase</span>
+<span id="L158" class="LineNr">158 </span>
+<span id="L159" class="LineNr">159 </span><span class="Comment">&quot;&quot; syntastic</span>
+<span id="L160" class="LineNr">160 </span><span class="Comment">&quot; This shows the quick fix list at the bottom. TODO: Figure out how to toggle.</span>
+<span id="L161" class="LineNr">161 </span><span class="PreProc">let</span> <span class="Identifier">g:syntastic_auto_loc_list</span><span class="Operator">=</span><span class="Constant">1</span>
+<span id="L162" class="LineNr">162 </span><span class="Comment">&quot; This shows markers near the line numbers indicating that the line has</span>
+<span id="L163" class="LineNr">163 </span><span class="Comment">&quot; something wrong with it.</span>
+<span id="L164" class="LineNr">164 </span><span class="PreProc">let</span> <span class="Identifier">g:syntastic_enable_signs</span><span class="Operator">=</span><span class="Constant">1</span>
+<span id="L165" class="LineNr">165 </span><span class="Comment">&quot; This checks a file once you open it.</span>
+<span id="L166" class="LineNr">166 </span><span class="PreProc">let</span> <span class="Identifier">g:syntastic_check_on_open</span><span class="Operator">=</span><span class="Constant">1</span>
+<span id="L167" class="LineNr">167 </span>
+<span id="L168" class="LineNr">168 </span><span class="Comment">&quot;&quot; Ultisnips</span>
+<span id="L169" class="LineNr">169 </span><span class="PreProc">let</span> <span class="Identifier">g:UltiSnipsExpandTrigger</span><span class="Operator">=</span><span class="String">&quot;&lt;c-j&gt;&quot;</span>
+<span id="L170" class="LineNr">170 </span><span class="PreProc">let</span> <span class="Identifier">g:UltiSnipsListSnippets</span><span class="Operator">=</span><span class="String">&quot;&lt;c-tab&gt;&quot;</span>
+<span id="L171" class="LineNr">171 </span><span class="PreProc">let</span> <span class="Identifier">g:UltiSnipsJumpForwardTrigger</span><span class="Operator">=</span><span class="String">&quot;&lt;c-j&gt;&quot;</span>
+<span id="L172" class="LineNr">172 </span><span class="PreProc">let</span> <span class="Identifier">g:UltiSnipsJumpBackwardTrigger</span><span class="Operator">=</span><span class="String">&quot;&lt;c-k&gt;&quot;</span>
+<span id="L173" class="LineNr">173 </span>
+<span id="L174" class="LineNr">174 </span><span class="Comment">&quot;&quot; Yankring, remap the show yanklist key.</span>
+<span id="L175" class="LineNr">175 </span><span class="PreProc">nnoremap</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">F4</span><span class="Delimiter">&gt;</span> :YRShow<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L176" class="LineNr">176 </span>
+<span id="L177" class="LineNr">177 </span><span class="Comment">&quot; Let bufferline automatically echo to the command bar area.</span>
+<span id="L178" class="LineNr">178 </span><span class="PreProc">let</span> <span class="Identifier">g:bufferline_echo</span> <span class="Operator">=</span> <span class="Constant">1</span>
+<span id="L179" class="LineNr">179 </span>
+<span id="L180" class="LineNr">180 </span><span class="Comment">&quot; For lightline to show things</span>
+<span id="L181" class="LineNr">181 </span><span class="PreProc">set</span> <span class="PreProc">laststatus</span>=2
+<span id="L182" class="LineNr">182 </span><span class="PreProc">let</span> <span class="Identifier">g:lightline</span> <span class="Operator">=</span> <span class="level16c">{</span>
+<span id="L183" class="LineNr">183 </span><span class="Special">      \</span> <span class="String">'colorscheme'</span>: <span class="String">'wombat'</span>,
+<span id="L184" class="LineNr">184 </span><span class="Special">      \</span> <span class="String">'active'</span>: <span class="level15c">{</span>
+<span id="L185" class="LineNr">185 </span><span class="Special">      \</span>   <span class="String">'left'</span>: <span class="level14c">[</span> <span class="level13c">[</span> <span class="String">'mode'</span>, <span class="String">'paste'</span> <span class="level13c">]</span>,
+<span id="L186" class="LineNr">186 </span><span class="Special">      \</span>             <span class="level13c">[</span> <span class="String">'fugitive'</span>, <span class="String">'readonly'</span>, <span class="String">'filename'</span>, <span class="String">'modified'</span> <span class="level13c">]</span> <span class="level14c">]</span>
+<span id="L187" class="LineNr">187 </span><span class="Special">      \</span> <span class="level15c">}</span>,
+<span id="L188" class="LineNr">188 </span><span class="Special">      \</span> <span class="String">'component'</span>: <span class="level15c">{</span>
+<span id="L189" class="LineNr">189 </span><span class="Special">      \</span>   <span class="String">'readonly'</span>: <span class="String">'%{&amp;filetype==&quot;help&quot;?&quot;&quot;:&amp;readonly?&quot;ReadOnly&quot;:&quot;&quot;}'</span>,
+<span id="L190" class="LineNr">190 </span><span class="Special">      \</span>   <span class="String">'modified'</span>: <span class="String">'%{&amp;filetype==&quot;help&quot;?&quot;&quot;:&amp;modified?&quot;+&quot;:&amp;modifiable?&quot;&quot;:&quot;-&quot;}'</span>,
+<span id="L191" class="LineNr">191 </span><span class="Special">      \</span>   <span class="String">'fugitive'</span>: <span class="String">'%{exists(&quot;*fugitive#head&quot;)?fugitive#head():&quot;&quot;}'</span>
+<span id="L192" class="LineNr">192 </span><span class="Special">      \</span> <span class="level15c">}</span>,
+<span id="L193" class="LineNr">193 </span><span class="Special">      \</span> <span class="String">'component_function'</span>: <span class="level15c">{</span>
+<span id="L194" class="LineNr">194 </span><span class="Special">      \</span>   <span class="String">'fugitive'</span>: <span class="String">'MyFugitive'</span>
+<span id="L195" class="LineNr">195 </span><span class="Special">      \</span> <span class="level15c">}</span>,
+<span id="L196" class="LineNr">196 </span><span class="Special">      \</span> <span class="String">'component_visible_condition'</span>: <span class="level15c">{</span>
+<span id="L197" class="LineNr">197 </span><span class="Special">      \</span>   <span class="String">'readonly'</span>: <span class="String">'(&amp;filetype!=&quot;help&quot;&amp;&amp; &amp;readonly)'</span>,
+<span id="L198" class="LineNr">198 </span><span class="Special">      \</span>   <span class="String">'modified'</span>: <span class="String">'(&amp;filetype!=&quot;help&quot;&amp;&amp;(&amp;modified||!&amp;modifiable))'</span>,
+<span id="L199" class="LineNr">199 </span><span class="Special">      \</span>   <span class="String">'fugitive'</span>: <span class="String">'(exists(&quot;*fugitive#head&quot;) &amp;&amp; &quot;&quot;!=fugitive#head())'</span>
+<span id="L200" class="LineNr">200 </span><span class="Special">      \</span> <span class="level15c">}</span>,
+<span id="L201" class="LineNr">201 </span><span class="Special">      \</span> <span class="String">'separator'</span>: <span class="level15c">{</span> <span class="String">'left'</span>: <span class="String">'&gt;&gt;'</span>, <span class="String">'right'</span>: <span class="String">'&lt;&lt;'</span> <span class="level15c">}</span>,
+<span id="L202" class="LineNr">202 </span><span class="Special">      \</span> <span class="String">'subseparator'</span>: <span class="level15c">{</span> <span class="String">'left'</span>: <span class="String">'&gt;'</span>, <span class="String">'right'</span>: <span class="String">'&lt;'</span> <span class="level15c">}</span>
+<span id="L203" class="LineNr">203 </span><span class="Special">      \</span> <span class="level16c">}</span>
+<span id="L204" class="LineNr">204 </span><span class="Comment">&quot; Shows a nifty branch icon when in a git repo.</span>
+<span id="L205" class="LineNr">205 </span><span class="PreProc">function</span>! MyFugitive<span class="Delimiter">()</span>
+<span id="L206" class="LineNr">206 </span>  <span class="PreProc">if</span> <span class="Function">exists</span><span class="Delimiter">(</span><span class="String">&quot;*fugitive#head&quot;</span><span class="Delimiter">)</span>
+<span id="L207" class="LineNr">207 </span>    <span class="PreProc">let</span> <span class="Identifier">_</span> <span class="Operator">=</span> fugitive#<span class="Normal">head</span><span class="Delimiter">()</span>
+<span id="L208" class="LineNr">208 </span>    <span class="PreProc">return</span> <span class="Function">strlen</span><span class="Delimiter">(</span>_<span class="Delimiter">)</span> ? <span class="String">'⎇  '</span><span class="Operator">.</span>_ : <span class="String">''</span>
+<span id="L209" class="LineNr">209 </span>  <span class="PreProc">endif</span>
+<span id="L210" class="LineNr">210 </span>  <span class="PreProc">return</span> <span class="String">''</span>
+<span id="L211" class="LineNr">211 </span><span class="PreProc">endfunction</span>
+<span id="L212" class="LineNr">212 </span>
+<span id="L213" class="LineNr">213 </span><span class="Comment">&quot; Fix by maker of vim-powerline. For all the status line plugins, the</span>
+<span id="L214" class="LineNr">214 </span><span class="Comment">&quot; transition from insert-&gt;normal mode always had a lag. To fix the lag you</span>
+<span id="L215" class="LineNr">215 </span><span class="Comment">&quot; would have to break most of your remap by setting a timeoutlen to a low</span>
+<span id="L216" class="LineNr">216 </span><span class="Comment">&quot; value. This seems to fix it without destroying mappings.</span>
+<span id="L217" class="LineNr">217 </span><span class="PreProc">augroup</span> FastEscape
+<span id="L218" class="LineNr">218 </span>    <span class="PreProc">autocmd</span>!
+<span id="L219" class="LineNr">219 </span>    <span class="PreProc">au</span> <span class="Type">InsertEnter</span> * <span class="PreProc">set</span> timeoutlen<span class="Operator">=</span><span class="Constant">0</span>
+<span id="L220" class="LineNr">220 </span>    <span class="PreProc">au</span> <span class="Type">InsertLeave</span> * <span class="PreProc">set</span> timeoutlen<span class="Operator">=</span><span class="Constant">1000</span>
+<span id="L221" class="LineNr">221 </span><span class="PreProc">augroup</span> END
+<span id="L222" class="LineNr">222 </span><span class="Comment">&quot; Remove the default status bar below lightline from showing modes, it is</span>
+<span id="L223" class="LineNr">223 </span><span class="Comment">&quot; useless with lightline present.</span>
+<span id="L224" class="LineNr">224 </span><span class="PreProc">set</span> <span class="PreProc">noshowmode</span>
+<span id="L225" class="LineNr">225 </span>
+<span id="L226" class="LineNr">226 </span><span class="Comment">&quot; The combo of 'set number' and 'set relativenumber' ends up setting</span>
+<span id="L227" class="LineNr">227 </span><span class="Comment">&quot; relative numbers, but where it would say line 0 for relative numbers,</span>
+<span id="L228" class="LineNr">228 </span><span class="Comment">&quot; shows the actual line number. The F5 remapping causes it to toggle from</span>
+<span id="L229" class="LineNr">229 </span><span class="Comment">&quot; absolute line numbers to relative with the actual line number at the current</span>
+<span id="L230" class="LineNr">230 </span><span class="Comment">&quot; line.</span>
+<span id="L231" class="LineNr">231 </span><span class="PreProc">set</span> <span class="PreProc">number</span>
+<span id="L232" class="LineNr">232 </span><span class="PreProc">set</span> <span class="PreProc">relativenumber</span>
+<span id="L233" class="LineNr">233 </span><span class="PreProc">nnoremap</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">F5</span><span class="Delimiter">&gt;</span> :set relativenumber!<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L234" class="LineNr">234 </span>
+<span id="L235" class="LineNr">235 </span><span class="Comment">&quot; Disable folding</span>
+<span id="L236" class="LineNr">236 </span><span class="PreProc">set</span> <span class="PreProc">nofoldenable</span>
+<span id="L237" class="LineNr">237 </span>
+<span id="L238" class="LineNr">238 </span><span class="Comment">&quot; In many terminal emulators the mouse works just fine, thus enable it.</span>
+<span id="L239" class="LineNr">239 </span><span class="PreProc">if</span> <span class="Function">has</span><span class="level16c">(</span><span class="String">'mouse'</span><span class="level16c">)</span>
+<span id="L240" class="LineNr">240 </span>  <span class="PreProc">set</span> <span class="PreProc">mouse</span>=a
+<span id="L241" class="LineNr">241 </span><span class="PreProc">endif</span>
+<span id="L242" class="LineNr">242 </span>
+<span id="L243" class="LineNr">243 </span><span class="Comment">&quot; Need to include 'stty -ixon' in .bashrc or .zshrc for this to work.</span>
+<span id="L244" class="LineNr">244 </span><span class="PreProc">inoremap</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span><span class="Delimiter">&lt;</span><span class="Special">C-S</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">C-O</span><span class="Delimiter">&gt;</span>:update<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L245" class="LineNr">245 </span><span class="PreProc">nnoremap</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span><span class="Delimiter">&lt;</span><span class="Special">C-S</span><span class="Delimiter">&gt;</span> :update<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L246" class="LineNr">246 </span><span class="PreProc">noremap</span> <span class="Delimiter">&lt;</span><span class="Special">silent</span><span class="Delimiter">&gt;</span>; :
+<span id="L247" class="LineNr">247 </span><span class="PreProc">set</span> <span class="PreProc">nowrap</span>
+<span id="L248" class="LineNr">248 </span>
+<span id="L249" class="LineNr">249 </span><span class="PreProc">nnoremap</span> Y y$
+<span id="L250" class="LineNr">250 </span>
 </pre>
-</span>
-<!-- vim: set foldmethod=manual : -->
 </div>
+<!-- vim: set foldmethod=manual : -->
+		</section>
+
+		<footer>
+			
+		</footer>
+	</div>
 </body>
 
 </html>
